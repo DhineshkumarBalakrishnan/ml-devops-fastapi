@@ -1,4 +1,3 @@
-cat > .github/workflows/deploy.yml <<'EOF'
 name: Build and Push to ECR
 
 on:
@@ -37,4 +36,3 @@ jobs:
         run: |
           docker push \
           941958612463.dkr.ecr.ap-south-1.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
-EOF
