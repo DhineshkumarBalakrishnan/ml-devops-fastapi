@@ -14,12 +14,14 @@ spec:
       labels:
         app: python-app
     spec:
+      imagePullSecrets:
+      - name: ecr-secret
       containers:
       - name: python-app
-        image: <YOUR_DOCKERHUB_USERNAME>/python-app:latest
+        image: 941958612463.dkr.ecr.ap-south-1.amazonaws.com/fastapi-demo:v1
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 8000
         resources:
           requests:
             memory: "128Mi"
